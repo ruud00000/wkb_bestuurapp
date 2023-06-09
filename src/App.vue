@@ -3,54 +3,80 @@
     <div class="topnav" id="myTopnav">
         <!--<img id="logo" src="assets/logo_black_2x.png" alt="Winterswijkse kegelbond logo" href="#top" height="25"> -->
         <a href="#top" class="active">Home</a>
-        <a href="#wkbcompetitie">WKB competitie</a>
-        <a href="#meesterschappen">Meesterschappen</a>
-        <a href="#wedstrijden">Wedstrijden</a>
-        <a href="#competitiedata">Competitiedata</a>
-        <a href="#instellingen">Instellingen</a>
-        <a href="#download">Download</a>
-        <a href="#profiel">Profiel</a>
-        <a href="javascript:void(0);" class="icon" @click="toggleResponsive()">
+        <div class="dropdown">
+            <button class="dropbtn">Leden
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">WKB competitie</a>
+                <a href="#">Meesterschappen</a>
+                <a href="#">Competitiedata</a>
+                <a href="#">Meesterschappen data</a>
+                <a href="#">Download competitie uitslagen</a>
+                <a href="#">Download meesterschappen uitslagen</a>
+                <a href="#">Instellingen competitie</a>
+                <a href="#">Instellingen meesterschappen</a>
+                <a href="#">Profiel</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Clubs
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Verslag van WKB-overleg</a>
+                <a href="#">Genomen besluit</a>
+                <a href="#">Binnengekomen informatie/verzoek</a>
+                <a href="#">Archief</a>
+                <hr>
+                <a href="#">Competitiedata</a>
+                <a href="#">Deelnemers competitie</a>
+                <hr>
+                <a href="#">Verzonden persbericht</a>
+                <a href="#">Perspublicatie</a>
+                <a href="#">Binnengekomen nieuws</a>
+                <hr>
+                <a href="#">Geplande toernooien</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Publiek
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Home pagina</a>
+                <a href="#">Clubs</a>
+                <a href="#">Toppers</a>
+                <a href="#">Locaties</a>
+                <a href="#">Kegelsport</a>
+                <a href="#">Kosten</a>
+                <a href="#">Organisatie</a>
+           </div>
+        </div>
+
+         <a href="javascript:void(0);" class="icon" @click="toggleResponsive()">
             <i class="fa fa-bars"></i>
         </a> 
     </div>
 
     <div id="main" ref="top"> 
-        <section class = "top-level-section" v-show="!hideCompetitie" ref="competitie">
-            <Competitie  :todo="todo"/>
-        </section>
-        <section class = "top-level-section" v-show="!hideCompetitiedata" ref="competitiedata">
-            <Competitiedata  :todo="todo"/>
-        </section>
-        <section class = "top-level-section" v-show="!hideInstellingen" ref="instellingen">
-            <Instellingen  :todo="todo"/>
-        </section>
-        <section class = "top-level-section" v-show="!hideDownload" ref="download">
+         <section class = "top-level-section" v-show="!hideDownload" ref="download">
             <Download  :todo="todo"/>
         </section>
-        <section class = "top-level-section" v-show="!hideProfiel" ref="profiel">
-            <Profiel  :todo="todo"/>
-        </section>
+
     </div>
 </template>
 
 <script>
 
 import backButton from "./assets/chevron_left_FILL0_wght700_GRAD0_opsz48.png"
-import Competitie from './Competitie.vue'
-import Competitiedata from './Competitiedata.vue'
-import Instellingen from './Instellingen.vue'
+
 import Download from './Download.vue'
-import Profiel from './Profiel.vue'
 
 export default {
     name: "App",
     components: {
-        Competitie,
-        Competitiedata,
-        Instellingen,
-        Download,
-        Profiel
+        Download
     },
     data() {
         return {
@@ -130,4 +156,5 @@ export default {
 <style>
     @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
     @import './assets/styles/style.css';
+    @import './assets/styles/responsive_navbar_dropdown.css';
 </style>
