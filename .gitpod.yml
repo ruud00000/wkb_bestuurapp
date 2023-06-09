@@ -1,0 +1,9 @@
+tasks:
+  - name: Start web server
+    init: python -m http.server 8000
+
+ports:
+  - port: 8000
+    onOpen: open-browser
+    
+# see https://www.gitpod.io/docs/configure/workspaces/ports for some documentation on writing .gitpod.yml file

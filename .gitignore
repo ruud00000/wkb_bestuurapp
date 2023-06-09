@@ -1,0 +1,24 @@
+.DS_Store
+node_modules
+# /dist    
+# /dist wel uploaden voor weergave static files in github pages
+
+# ignore ALL files in ANY directory named temp
+temp/
+
+# local env files
+.env.local
+.env.*.local
+
+# ignore ALL .log files
+*.log
+
+# Editor directories and files
+.idea
+.vs
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

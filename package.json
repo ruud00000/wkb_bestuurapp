@@ -1,0 +1,15 @@
+{
+    "name": "wkbledenapp",
+    "version": "0.1.0",
+    "dependencies": {
+        "@vue/cli-service": "^5.0.8",
+        "@vue/compiler-sfc": "^3.3.2",
+        "core-js": "^3.30.2",
+        "vue": "^3.3.4",
+        "vue-select": "^4.0.0-beta.6"
+    },
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    }
+}
