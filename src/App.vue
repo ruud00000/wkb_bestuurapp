@@ -1,92 +1,81 @@
 <template>
 
-    <div class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav">
         <!--<img id="logo" src="assets/logo_black_2x.png" alt="Winterswijkse kegelbond logo" href="#top" height="25"> -->
         <a href="#top" class="active">Home</a>
-        <div class="dropdown">
-            <button class="dropbtn">Leden
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">WKB competitie</a>
-                <a href="#">Meesterschappen</a>
-                <a href="#">Competitiedata</a>
-                <a href="#">Meesterschappen data</a>
-                <a href="#">Download competitie uitslagen</a>
-                <a href="#">Download meesterschappen uitslagen</a>
-                <a href="#">Instellingen competitie</a>
-                <a href="#">Instellingen meesterschappen</a>
-                <a href="#">Profiel</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Clubs
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Verslag van WKB-overleg</a>
-                <a href="#">Genomen besluit</a>
-                <a href="#">Binnengekomen informatie/verzoek</a>
-                <a href="#">Archief</a>
-                <hr>
-                <a href="#">Competitiedata</a>
-                <a href="#">Deelnemers competitie</a>
-                <hr>
-                <a href="#">Verzonden persbericht</a>
-                <a href="#">Perspublicatie</a>
-                <a href="#">Binnengekomen nieuws</a>
-                <hr>
-                <a href="#">Geplande toernooien</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Publiek
-            <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Home pagina</a>
-                <a href="#">Clubs</a>
-                <a href="#">Toppers</a>
-                <a href="#">Locaties</a>
-                <a href="#">Kegelsport</a>
-                <a href="#">Kosten</a>
-                <a href="#">Organisatie</a>
-           </div>
-        </div>
-
-         <a href="javascript:void(0);" class="icon" @click="toggleResponsive()">
+        <a href="#uitslagen">Uitslagen</a>
+        <a href="#data">Data</a>
+        <a href="#deelnemers">Deelnemers</a>
+        <a href="#leden">Leden</a>
+        <a href="#clubs">Clubs</a>
+        <a href="#website">Website</a>
+        <a href="#overig">Overig</a>
+        <a href="javascript:void(0);" class="icon" @click="toggleResponsive()">
             <i class="fa fa-bars"></i>
         </a> 
     </div>
 
     <div id="main" ref="top"> 
-         <section class = "top-level-section" v-show="!hideDownload" ref="download">
-            <Download  :todo="todo"/>
+        <section class = "top-level-section" v-show="!hideUitslagen" ref="uitslagen">
+            <Uitslagen  :todo="todo"/>
         </section>
-
+        <section class = "top-level-section" v-show="!hideData" ref="data">
+            <Data  :todo="todo"/>
+        </section>
+        <section class = "top-level-section" v-show="!hideDeelnemers" ref="deelnemers">
+            <Deelnemers  :todo="todo"/>
+        </section>
+        <section class = "top-level-section" v-show="!hideLeden" ref="leden">
+            <Leden  :todo="todo"/>
+        </section>
+        <section class = "top-level-section" v-show="!hideClubs" ref="clubs">
+            <Clubs  :todo="todo"/>
+        </section>
+        <section class = "top-level-section" v-show="!hideWebsite" ref="website">
+            <Website  :todo="todo"/>
+        </section>
+        <section class = "top-level-section" v-show="!hideOverig" ref="overig">
+            <Overig  :todo="todo"/>
+        </section>
     </div>
+
 </template>
 
 <script>
 
 import backButton from "./assets/chevron_left_FILL0_wght700_GRAD0_opsz48.png"
 
-import Download from './Download.vue'
+import Uitslagen from './Uitslagen.vue'
+import Data from './Data.vue'
+import Deelnemers from './Deelnemers.vue'
+import Leden from './Leden.vue'
+import Clubs from './Clubs.vue'
+import Website from './Website.vue'
+import Overig from './Overig.vue'
+
 
 export default {
     name: "App",
     components: {
-        Download
+        Uitslagen,
+        Data,
+        Deelnemers,
+        Leden,
+        Clubs,
+        Website,
+        Overig
     },
     data() {
         return {
             source: "",
             backButtonImage: backButton,
-            hideCompetitie: false,
-            hideCompetitiedata: true,
-            hideInstellingen: true,
-            hideDownload: true,
-            hideProfiel: true,
+            hideUitslagen: false,
+            hideData: true,
+            hideDeelnemers: true,
+            hideLeden: true,
+            hideClubs: true,
+            hideWebsite: true,
+            hideOverig: true,
             todo: false
         }
     },
@@ -156,5 +145,5 @@ export default {
 <style>
     @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
     @import './assets/styles/style.css';
-    @import './assets/styles/responsive_navbar_dropdown.css';
+    @import './assets/styles/topnav_responsive.css';
 </style>

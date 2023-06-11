@@ -5,7 +5,7 @@
 <script>
 
 export default {
-    name: "Download"
+    name: "Overig"
     }
 
 </script>

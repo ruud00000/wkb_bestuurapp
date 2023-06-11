@@ -8,21 +8,13 @@ html {
     display: flex;
     justify-content: center;
 }
+
 html, 
 body, 
 section, 
 footer, 
 div {
-    border-width: thin; 
-    border-style: none;
-}
-hr {
-    color: rgba(128, 128, 128, 0.301);
-    height: 1px;
-    background-color: rgba(128, 128, 128, 0.301);
-    border: none;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
+    border-width: thin;
 }
 button {
     width: 100%;
@@ -40,18 +32,25 @@ body {
     align-items: center;
 }
 section {
+    /*display: flex;*/
+    /*flex-direction: column;  voor buttons in sectie */
+    
+    border-style: solid;
     border-color: grey;
+    margin:1px;
     padding: 20px;
  }
 div {
+    border-style: solid;
     border-color: rgba(128, 128, 128, 0.301);
+    margin:1px;
 }
 footer {
     border-style: dashed;
     border-color: grey;
+    margin:1px;           
 }
 h1 {
-    padding-top: 20px;
     font-size: xxx-large;
 }
 h2 {
@@ -86,7 +85,6 @@ a:active {
 }
 #navbar {
     position: fixed;
-    top: 0px;
     height: 50px;
     width: 100%;
     background-color: white;
@@ -132,12 +130,4 @@ a:active {
     font-size: medium;
     margin:auto;
 }
-@media screen and (max-width: 850px) {
-    /* CSS that should be displayed if width is equal to or less than 1280px goes here */
-        body, 
-        .topnav {
-            width: 100%;
-        }
-}
-
 
