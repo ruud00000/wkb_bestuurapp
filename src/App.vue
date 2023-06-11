@@ -69,10 +69,10 @@ export default {
         return {
             source: "",
             backButtonImage: backButton,
-            hideUitslagen: false,
+            hideUitslagen: true,
             hideData: true,
             hideDeelnemers: true,
-            hideLeden: true,
+            hideLeden: false,
             hideClubs: true,
             hideWebsite: true,
             hideOverig: true,

@@ -1,5 +1,5 @@
 {
-    "name": "wkbledenapp",
+    "name": "wkb_bestuurapp",
     "version": "0.1.0",
     "dependencies": {
         "@vue/cli-service": "^5.0.8",

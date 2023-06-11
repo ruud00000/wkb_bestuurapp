@@ -2,6 +2,8 @@
     box-sizing: border-box;
     font-family: 'DM Sans',sans-serif;
     font-size: large;
+    border-width: thin;
+    
 }
 html {
     scroll-behavior: smooth;
@@ -14,7 +16,8 @@ body,
 section, 
 footer, 
 div {
-    border-width: thin;
+    border-style: none;
+    
 }
 button {
     width: 100%;
@@ -34,21 +37,15 @@ body {
 section {
     /*display: flex;*/
     /*flex-direction: column;  voor buttons in sectie */
-    
-    border-style: solid;
     border-color: grey;
-    margin:1px;
     padding: 20px;
  }
 div {
-    border-style: solid;
     border-color: rgba(128, 128, 128, 0.301);
-    margin:1px;
 }
 footer {
     border-style: dashed;
-    border-color: grey;
-    margin:1px;           
+    border-color: grey;        
 }
 h1 {
     font-size: xxx-large;
@@ -97,7 +94,8 @@ a:active {
     border-style:none; 
 }
 #main {
-    margin-top: 50px;
+    position: relative;
+    top: 50px;
     padding: 0px;
 }
 

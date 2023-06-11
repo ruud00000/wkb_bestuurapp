@@ -6,6 +6,7 @@
   width: 80%;
   position: fixed;
   border: none;
+  z-index: 1;
 }
 
 /* Style the links inside the navigation bar */
