@@ -21,7 +21,7 @@
         </div>   
     </form>
      <div v-show="!isEditMode">
-        <img :src="image"><br><br>
+        <img :src="profielafbeelding"><br><br>
         <span>Lid sinds: </span><b class="antwoord" id="lidsinds">{{ lidsinds }}</b>
         <hr>
         <span>Achternaam: </span><b class="antwoord" id="achternaam">{{ achternaam }}</b>
@@ -46,8 +46,8 @@
             <button @click="handleEditLid">Wijzig</button>
         </div>
     </div>
-    <form v-show="isEditMode">
-        <img :src="image"><br><br>
+    <div v-show="isEditMode">
+        <img :src="profielafbeelding"><br><br>
         <label for="input-lidsinds">Lid sinds<span class="required"> *</span></label>
         <input id="input-lidsinds" v-model="lidsinds" type="text" placeholder="dd/mm/jjjj" required/><br>
         <label for="input-achternaam">Achternaam<span class="required"> *</span></label>
@@ -85,7 +85,7 @@
         <div class="button-wrapper">
             <button @click="handleUpdateLid">Opslaan</button>
         </div>
-    </form>
+    </div>
 
 
 </template>
@@ -93,11 +93,13 @@
 <script>
 import image from './assets/photos/wmemelink.jpg'
 
+// image upload example: https://www.bezkoder.com/node-js-upload-store-images-mongodb/
+
 export default {
     name: "Leden",
     data() {
         return {
-            image: image,
+            profielafbeelding: image,
             clubpreselected: "",
             clubprecolor: "",
             lidselected: "",
