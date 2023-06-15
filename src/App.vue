@@ -80,62 +80,13 @@ export default {
         }
     },
     methods: {
-        getSource() {
-            return this.source
-        },
-        handleCloseCompetitie() {
-            this.hideCompetitie = true
-            this.$refs[this.source].scrollIntoView({ behavior: 'smooth'})
-        },
-        handleCloseCompetitiedata() {
-            this.hideCompetitiedata = true
-            this.$refs[this.source].scrollIntoView({ behavior: 'smooth'})
-        },
-        handleCloseInstellingen() {
-            this.hideInstellingen = true
-            this.$refs[this.source].scrollIntoView({ behavior: 'smooth'})  
-        },
-        handleCloseDownload() {
-            this.hideDownload = true
-            this.$refs[this.source].scrollIntoView({ behavior: 'smooth'})
-        },
-        handleCloseProfiel() {
-            this.hideProfiel = true
-            this.$refs[this.source].scrollIntoView({ behavior: 'smooth'})
-        },
-        showScrollInto(currentLocation, toLocation) {
-            this.source = currentLocation
-
-            switch(toLocation) {
-                case 'competitie':
-                    this.hideCompetitie = false
-                    break
-                case 'competitiedata':
-                    this.hideCompetitiedata = false
-                    break
-                case 'instellingen':
-                    this.hideInstellingen = false
-                    break
-                case 'download':
-                    this.hideDownload = false
-                    break
-                case 'profiel':
-                    this.hideProfiel = false
-                    break
-            }
-
-            this.$nextTick(() => 
-                this.$refs[toLocation].scrollIntoView({ behavior: 'smooth'}) 
-                )
-             
-        },
         /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
         toggleResponsive() {
-            var x = document.getElementById("myTopnav");
+            var x = document.getElementById("myTopnav")
             if (x.className === "topnav") {
-                x.className += " responsive";
+                x.className += " responsive"
             } else {
-                x.className = "topnav";
+                x.className = "topnav"
             }
         }
     }
