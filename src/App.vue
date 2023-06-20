@@ -10,13 +10,14 @@
         <a href="#clubs">Clubs</a>
         <a href="#website">Website</a>
         <a href="#overig">Overig</a>
-        <a href="javascript:void(0);" class="icon" @click="toggleResponsive()">
+        <a href="javascript:void(0);" id="nav-button" class="icon" @click="toggleResponsive()">
             <i class="fa fa-bars"></i>
         </a> 
     </div>
 
     <div id="main" ref="top"> 
-        <section class = "top-level-section" v-show="!hideUitslagen" ref="uitslagen">
+        <button @click="toggleResponsive()"></button>
+        <section id="uitslagen" class = "top-level-section" v-show="!hideUitslagen" ref="uitslagen">
             <Uitslagen  :todo="todo"/>
         </section>
         <section class = "top-level-section" v-show="!hideData" ref="data">
@@ -25,7 +26,7 @@
         <section class = "top-level-section" v-show="!hideDeelnemers" ref="deelnemers">
             <Deelnemers  :todo="todo"/>
         </section>
-        <section class = "top-level-section" v-show="!hideLeden" ref="leden">
+        <section id="leden" class = "top-level-section" v-show="!hideLeden" ref="leden">
             <Leden  :todo="todo"/>
         </section>
         <section class = "top-level-section" v-show="!hideClubs" ref="clubs">
