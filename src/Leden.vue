@@ -97,6 +97,9 @@ import image from './assets/photos/wmemelink.jpg'
 
 export default {
     name: "Leden",
+    props: {
+        todo: Boolean
+    },
     data() {
         return {
             profielafbeelding: image,
@@ -186,7 +189,7 @@ export default {
             })
             return await res.json()
         }
-    }         
+    }     
 }
     
 

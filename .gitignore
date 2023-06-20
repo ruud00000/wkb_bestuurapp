@@ -22,3 +22,6 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore package file
+*.tgz
