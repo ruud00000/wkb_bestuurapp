@@ -24,4 +24,4 @@ temp/
 *.sw?
 
 # Ignore package file
-*.tgz
+# *.tgz
