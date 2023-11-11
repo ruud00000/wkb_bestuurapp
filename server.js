@@ -18,6 +18,7 @@ console.log(client)
 app.use(bodyParser.json())
 app.use('/', express.static(__dirname + '/dist'))
 
+/*
 app.get('/get-lid', async function(req, res) {
     
     // connect to mongodb database
@@ -50,7 +51,7 @@ app.get('/get-lid', async function(req, res) {
     }
     res.send(response)
     
-})
+})*/
 
 app.post('/update-lid', async function(req, res) {
     
