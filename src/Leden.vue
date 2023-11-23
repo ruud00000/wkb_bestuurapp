@@ -3,12 +3,16 @@
     <form >
         <div>
             <label for="clubpre">Club</label>
-            <select id="clubpre" v-model="clubpreselected" :style="{ color: clubprecolor }" @change="setColor('clubpre')" required>
+            <!--<select id="clubpre" v-model="clubpreselected" :style="{ color: clubprecolor }" @change="setColor('clubpre')" required>
                 <option disabled value="">Selecteer een club</option>
                 <option value="GEK">GEK</option>
                 <option value="ONA">ONA</option>
                 <option value="Jannao">Jannao</option>
-            </select>
+            </select>-->
+
+            <select id="clubpre" v-model="selectedClub" :style="{ color: clubprecolor }" @change="setColor('clubpre')" required>
+                <option v-for="club in clubs" :key="club.naam" :value="club.naam">{{ club.naam }}</option>
+            </select> 
         </div>
         <div>
             <label for="lid">Lid</label>
@@ -119,11 +123,19 @@ export default {
             email: String,
             club: String,
             licentie: String,
-            isEditMode: false
+            isEditMode: false,
+            clubs: [],
+            selectedClub: null
         }
     },
+    mounted() {
+        //this.fetchClubs();
+    },
     async created() {
+        this.clubs = await this.fetchClubs();
+        console.log("clubs: ",this.clubs)
         const lidData = await this.fetchLid()
+        console.log(lidData)
         this.lidsinds = lidData.lidsinds
         this.achternaam = lidData.achternaam
         this.voornaam = lidData.voornaam
@@ -173,6 +185,15 @@ export default {
             // console.log(resJson)            
 
             this.isEditMode = false
+        },
+        async fetchClubs() {
+            try {
+                const res = await fetch('get-clubs')    
+                return await res.json()  
+
+            } catch (error) {
+                console.error('Error fetching clubs form MongoDB', error)
+            }
         },
         async fetchLid() {
             const res = await fetch('get-lid')
