@@ -10,7 +10,7 @@ const dbName = 'wkb_db'
 const collName = 'leden'
 
 // const url = DEV ? `mongodb://${dbAddress}` : `mongodb://${DB_USER}:${DB_PASS}@${dbAddress}?authSource=${dbName}`
-const url = `mongodb+srv://ruudnaastepad:FXsUvHGsKtlSqK1F@clusterwkb-test.fmf0co6.mongodb.net/?retryWrites=true&w=majority`
+const url = `mongodb+srv://ruudnaastepad:@clusterwkb-test.fmf0co6.mongodb.net/?retryWrites=true&w=majority`
 console.log(url)
 const client = new MongoClient(url)
 console.log(client)
