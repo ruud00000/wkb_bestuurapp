@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 data
+PASS.TXT
 # /dist    
 # /dist wel uploaden voor weergave static files in github pages
 

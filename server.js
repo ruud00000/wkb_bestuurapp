@@ -3,17 +3,17 @@ const app = express()
 const bodyParser = require('body-parser')
 const { MongoClient } = require('mongodb')
 
-const { DB_USER, DB_PASS, DEV } = process.env
-console.log(DB_USER,DB_PASS,DEV)
-const dbAddress = '127.0.0.1:27017'
+const { DB_USER, DB_PASS, DEV, DB_CONNECT } = process.env
+// console.log("user: ",DB_USER," pass: ",DB_PASS," dev: ",DEV," connect: ",DB_CONNECT)
+// const dbAddress = '127.0.0.1:27017'
 const dbName = 'wkb_db'
 const collName = 'leden'
 
 // const url = DEV ? `mongodb://${dbAddress}` : `mongodb://${DB_USER}:${DB_PASS}@${dbAddress}?authSource=${dbName}`
-const url = `mongodb+srv://ruudnaastepad:FXsUvHGsKtlSqK1F@clusterwkb-test.fmf0co6.mongodb.net/?retryWrites=true&w=majority`
-console.log(url)
+const url = `${DB_CONNECT}`
+// console.log("url: ",url)
 const client = new MongoClient(url)
-console.log(client)
+// console.log("client: ",client)
 
 
 app.use(bodyParser.json())
